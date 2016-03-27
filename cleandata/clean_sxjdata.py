@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#此过程还存在一个问题，就是讲数字和逗号一起输出之后，所有的int型变量也随之转换为字符型变量？如何解决这一问题呢？
 
 import time
 import datetime
