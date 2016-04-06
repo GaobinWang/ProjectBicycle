@@ -10,6 +10,7 @@ library(mapproj)
 library(plyr)
 library(sna)
 library(Hmisc)
+library(animation)
 
 
 #读取数据
@@ -191,12 +192,14 @@ finaldraw=function(alldate,alltimezone){
 
 alldate=order(unique(data$date))
 alltimezone=order(unique(data$timezone))
+alldate=20131021:20131027
 alldate=20131021
+
 alltimezone=1:48
 
 oopts = ani.options(ffmpeg = "D:/ImageMagick/ImageMagick-6.9.3-Q16/ffmpeg.exe")
 #Use the function from animation to make the final movie
 saveVideo({
   finaldraw(alldate,alltimezone)
-  ani.options(interval = 0.1, nmax = 230)
-}, video.name = "HansRosling.mp4", other.opts = "-b 500k")
+  ani.options(interval = .1, nmax = 230)
+}, video.name = "Hangzhouall.mp4", other.opts = "-b 500k")
